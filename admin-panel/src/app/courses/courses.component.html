@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-light-grey">
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32">
+        <h1><b>List of <span class="w3-tag">Courses</span></b></h1>
+    </header>
+
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <div class="w3-container">
+
+            <p>
+
+            </p>
+            <p>
+                <a routerLink="/add-course"><button class="btn navbar-inverse bg-dark text-light" type="addnew">Add new
+                        Course</button></a>
+            </p>
+
+            <p>
+
+            </p>
+
+            <div class="container">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+
+                            <td><b>Course Name</b></td>
+
+                            <td><b>Action</b></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let course of courseList">
+                            <td>{{course.courseName}}</td>
+                            <td>
+                                <button class="btn navbar-inverse bg-dark text-light"
+                                    (click)="deleteCourse(course.id)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

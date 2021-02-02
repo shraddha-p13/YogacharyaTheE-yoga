@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-light-grey">
+
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32">
+        <h1><b>Welcome to <span class="w3-tag">Yogacharya</span></b></h1>
+    </header>
+
+
+
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <div class="w3-col s12 w3-center">
+
+            <h4><b>Select Course Name : </b></h4>
+
+            <!-- Default dropright button -->
+            <!-- <select id="yoga" name="yoga">
+                <option value="Vinyasa yoga">Vinyasa yoga</option>
+                <option value="Hatha yoga">Hatha yoga</option>
+                <option value="Kundalini yoga">Kundalini yoga</option>
+                <option value="Ashtanga yoga">Ashtanga yoga</option>
+                <option value="Iyengar yoga">Iyengar yoga</option>
+                <option value="Bikram yoga">Bikram yoga</option>
+                <option value="Restorative yoga">Restorative yoga</option>
+            </select> -->
+
+            <ng-multiselect-dropdown [placeholder]="'Select Courses'" [data]="dropdownList"
+                [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onItemDeSelect($event)">
+            </ng-multiselect-dropdown>
+        </div>
+
+    </div>
+
+
+
+    <!-- Blog entries -->
+    <div class="w3-col s12 w3-center">
+        <hr>
+        <!-- Blog entry -->
+        <div class="w3-card-4 w3-margin w3-white">
+
+
+            <div class="w3-container">
+                <div class="container">
+                    <table class="table table-striped" *ngIf="isInstructorListPresent">
+                        <thead>
+                            <tr>
+
+                                <td><b>Instructor Name</b></td>
+                                <td><b>Contact No</b></td>
+                                <td><b>Email Id</b></td>
+                                <td><b>Zoom Link</b></td>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let instructor of instructorList">
+                                <td>{{instructor.instructorName}}</td>
+                                <td>{{instructor.contactNumber}}</td>
+                                <td>{{instructor.emailId}}</td>
+                                <td>
+                                    <a href="{{instructor.courseLink}}" target="_blank">{{instructor.courseLink}}</a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
